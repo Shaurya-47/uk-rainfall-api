@@ -1,5 +1,5 @@
 # uk-rainfall-api
-Repository containing a data pipeline that extracts and displays the latest UK rainfall data from the Environment Agency (EA) API 
+Repository containing a data pipeline that extracts and displays the latest UK rainfall data (latest readings and aggregated daily readings) from the Environment Agency (EA) API 
 (https://environment.data.gov.uk/flood-monitoring/doc/rainfall)
 
 ## TODOs (REMOVE THIS)
