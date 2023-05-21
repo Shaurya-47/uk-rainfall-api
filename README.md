@@ -8,6 +8,7 @@ Repository containing a data pipeline that extracts, saves, and displays the lat
 * Check Readme
 * Add screenshot to Readme
 * More data quality checks if time left
+* I have 2 less stations as 'not_specified' duplicates got dropped and another spurious one
 
 ENABLE THE COOKIE LINE IF API CALLS FAIL
 
@@ -55,13 +56,13 @@ the UK EA measurement stations respectively
 │   └── generate_map_aggregated.ipynb
 ├── reports
 │   └── maps
-│	└── rainfall_map_latest_{date}
-│	└── rainfall_map_daily_aggregated_{date}
+│	└── rainfall_map_latest_{date}.html
+│	└── rainfall_map_daily_aggregated_{date}.html
 │   └── notebook_outputs
-│	└── data_latest_notebook_{date}
-│	└── map_latest_notebook_{date}
-│	└── data_daily_aggregated_notebook_{date}
-│	└── map_daily_aggregated_notebook_{date}
+│	└── data_latest_notebook_{date}.html
+│	└── map_latest_notebook_{date}.html
+│	└── data_daily_aggregated_notebook_{date}.html
+│	└── map_daily_aggregated_notebook_{date}.html
 ├── README.md
 ├── uk_rainfall_env.yml
 ├── execute_notebooks_latest.sh
