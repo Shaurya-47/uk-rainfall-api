@@ -14020,7 +14020,7 @@ a.anchor-link {
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Date and time: 2023-05-21 18:41:14
+<pre>Date and time: 2023-05-21 21:09:26
 </pre>
 </div>
 </div>
@@ -14092,13 +14092,12 @@ a.anchor-link {
 <span class="sd">      :param d: Return those stations whose location falls within d km of the given latitude/longitude (in WGS84 coordinates), this may be approximated by a bounding box.</span>
 <span class="sd">      :param type: Return only those stations of the given type, where type can be one of &quot;SingleLevel&quot;, &quot;MultiTraceLevel&quot;, &quot;Coastal&quot;, &quot;Groundwater&quot; or &quot;Meteorological&quot;</span>
 <span class="sd">      :param status: Return only those stations with the given status. Can be one of &quot;Active&quot;, &quot;Closed&quot; or &quot;Suspended&quot;.</span>
-
-<span class="sd">      :return: a pandas data frame of river monitoring stations&quot;&quot;&quot;</span>
+<span class="sd">      &quot;&quot;&quot;</span>
     
     <span class="c1"># URL of the UK EA API</span>
     <span class="n">api_url</span> <span class="o">=</span> <span class="s2">&quot;https://environment.data.gov.uk/flood-monitoring/id/stations&quot;</span>
  
-    <span class="c1"># Build a dictionary of the query parameters</span>
+    <span class="c1"># build a dictionary of the query parameters</span>
     <span class="n">params</span> <span class="o">=</span>  <span class="p">{</span><span class="s1">&#39;parameterName&#39;</span><span class="p">:</span> <span class="n">parameter_name</span><span class="p">,</span>
                 <span class="s1">&#39;parameter&#39;</span><span class="p">:</span> <span class="n">parameter</span><span class="p">,</span>
                 <span class="s1">&#39;qualifier&#39;</span><span class="p">:</span> <span class="n">qualifier</span><span class="p">,</span>
@@ -14134,12 +14133,12 @@ a.anchor-link {
 
 <span class="c1"># function to retrieve data on rainfall measures</span>
 <span class="k">def</span> <span class="nf">get_data_measures</span><span class="p">(</span><span class="n">parameter_name</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-                 <span class="n">parameter</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-                 <span class="n">qualifier</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-                 <span class="n">station_reference</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-                 <span class="n">station</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-                 <span class="n">search</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Get details of measures available from river monitoring stations on the EA API</span>
+                     <span class="n">parameter</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+                     <span class="n">qualifier</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+                     <span class="n">station_reference</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+                     <span class="n">station</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+                     <span class="n">search</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Get details of measures available from the EA API</span>
 
 <span class="sd">       :param parameter_name: Return only measures for parameters with the given name, for example Water Level or Flow.</span>
 <span class="sd">       :param parameter: Return only measures for parameters with the given short form name, for example level or flow.</span>
@@ -14147,12 +14146,10 @@ a.anchor-link {
 <span class="sd">       :param station_reference: Return only those measures which are available from the station with the given reference identifier.</span>
 <span class="sd">       :param station: Return only those measures which are available from the station with the given URI.</span>
 <span class="sd">       :param search: Return only those measures whose label contains the given value.</span>
-
-<span class="sd">       :return: a pandas data frame of river monitoring measures</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">api_url</span> <span class="o">=</span> <span class="s2">&quot;http://environment.data.gov.uk/flood-monitoring/id/measures&quot;</span>
     
-     <span class="c1"># Build dictionary of query params from arguments</span>
+     <span class="c1"># build a dictionary of the query parameters</span>
     <span class="n">params</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;parameterName&#39;</span><span class="p">:</span> <span class="n">parameter_name</span><span class="p">,</span>
     <span class="s1">&#39;parameter&#39;</span><span class="p">:</span> <span class="n">parameter</span><span class="p">,</span>
     <span class="s1">&#39;qualifier&#39;</span><span class="p">:</span> <span class="n">qualifier</span><span class="p">,</span>
@@ -14177,8 +14174,7 @@ a.anchor-link {
     <span class="k">return</span><span class="p">(</span><span class="n">measures</span><span class="p">)</span>
 
 <span class="c1"># function to retrieve data on rainfall readings</span>
-<span class="k">def</span> <span class="nf">get_data_readings</span><span class="p">(</span> 
-                             <span class="n">limit</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="k">def</span> <span class="nf">get_data_readings</span><span class="p">(</span>       <span class="n">limit</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
                              <span class="n">date</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> 
                              <span class="n">startdate</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> 
                              <span class="n">enddate</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
@@ -14192,28 +14188,25 @@ a.anchor-link {
                              <span class="n">station_reference</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
                              <span class="n">station</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
                              <span class="n">search</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Gets readings for a given measure from the EA river monitoring API</span>
+    <span class="sd">&quot;&quot;&quot;Get readings for a given measure from the EA API</span>
 
 <span class="sd">      :param measure_id: EA API measure id</span>
 <span class="sd">      :param limit: Maximum number of records to return. Defaults to 500. Max 10000.</span>
 <span class="sd">      :param date: Return all the readings taken on the specified day.</span>
-<span class="sd">      :param startdate: Return the readings taken on the specified range of days. Date format 2020-02-17.</span>
-<span class="sd">      :param enddate: Return the readings taken on the specified range of days. Date format 2020-02-17.</span>
+<span class="sd">      :param startdate: Return the readings taken on the specified range of days. Date format 2023-05-17.</span>
+<span class="sd">      :param enddate: Return the readings taken on the specified range of days. Date format 2023-05-17.</span>
 <span class="sd">      :param since: Return the readings taken since the given date time (not inclusive), up to the specified limit. If no limit is given then a default limit of 500 will be used. Typically when tracking a particular measurement then use the dateTime of the last retrieved value as the since parameter to find any new readings. Will accept a simple date value such as 2016-09-07 which will be interpreted as 2016-09-07T:00:00:00Z. The latter (with timestamp) is also accepted.</span>
 <span class="sd">      :param latest: Return only the latest reading.</span>
 <span class="sd">      :param today: Return only all readings from today.</span>
-<span class="sd">      :param sorted: Order the array of returned readings into descending order by date, this done before the limits is applied thus enabling you to fetch the most recent n readings.</span>
-<span class="sd">      </span>
+<span class="sd">      :param sorted: Order the array of returned readings into descending order by date, this done before the limits is applied thus enabling you to fetch the most recent n readings.     </span>
 <span class="sd">      :param parameter_name: Return only measures for parameters with the given name, for example Water Level or Flow.</span>
 <span class="sd">      :param parameter: Return only measures for parameters with the given short form name, for example level or flow.</span>
 <span class="sd">      :param qualifier: Return only those measures with qualifier. Useful qualifiers are Stage and Downstream Stage (for stations such as weirs which measure levels at two locations), Groundwater for groundwater levels as opposed to river levels and Tidal Level for tidal levels.</span>
 <span class="sd">      :param station_reference: Return only those measures which are available from the station with the given reference identifier.</span>
 <span class="sd">      :param station: Return only those measures which are available from the station with the given URI.</span>
 <span class="sd">      :param search: Return only those measures whose label contains the given value.</span>
-<span class="sd">      </span>
-<span class="sd">      :return: a pandas data frame of readings for the measure</span>
 <span class="sd">  &quot;&quot;&quot;</span>
-    <span class="c1"># Set True/False argument to blank or None so handled correctly in params to requests.get</span>
+    <span class="c1"># Set True/False argument to blank or None so it is handled correctly</span>
     <span class="k">if</span> <span class="n">latest</span><span class="p">:</span>
         <span class="n">latest</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
     <span class="k">else</span><span class="p">:</span>
@@ -14229,7 +14222,7 @@ a.anchor-link {
     <span class="k">else</span><span class="p">:</span>
         <span class="nb">sorted</span> <span class="o">=</span> <span class="kc">None</span>
     
-    <span class="c1"># Build dictionary of query params from arguments</span>
+    <span class="c1"># build a dictionary of the query parameters</span>
     <span class="n">params</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;_limit&#39;</span><span class="p">:</span> <span class="n">limit</span><span class="p">,</span>
     <span class="s1">&#39;date&#39;</span><span class="p">:</span> <span class="n">date</span><span class="p">,</span>
     <span class="s1">&#39;startdate&#39;</span><span class="p">:</span> <span class="n">startdate</span><span class="p">,</span>
@@ -14237,8 +14230,7 @@ a.anchor-link {
     <span class="s1">&#39;since&#39;</span><span class="p">:</span> <span class="n">since</span><span class="p">,</span> 
     <span class="s1">&#39;latest&#39;</span><span class="p">:</span> <span class="n">latest</span><span class="p">,</span>
     <span class="s1">&#39;today&#39;</span><span class="p">:</span> <span class="n">today</span><span class="p">,</span>
-    <span class="s1">&#39;_sorted&#39;</span><span class="p">:</span> <span class="nb">sorted</span><span class="p">,</span>
-              
+    <span class="s1">&#39;_sorted&#39;</span><span class="p">:</span> <span class="nb">sorted</span><span class="p">,</span>       
     <span class="s1">&#39;parameterName&#39;</span><span class="p">:</span> <span class="n">parameter_name</span><span class="p">,</span>
     <span class="s1">&#39;parameter&#39;</span><span class="p">:</span> <span class="n">parameter</span><span class="p">,</span>
     <span class="s1">&#39;qualifier&#39;</span><span class="p">:</span> <span class="n">qualifier</span><span class="p">,</span>
@@ -14277,9 +14269,7 @@ a.anchor-link {
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># retrieving the rainfall stations, measures, and readings data </span>
 <span class="n">rainfall_stations_data</span> <span class="o">=</span> <span class="n">get_data_stations</span><span class="p">(</span><span class="n">parameter</span><span class="o">=</span><span class="s1">&#39;rainfall&#39;</span><span class="p">)</span>
-
 <span class="n">rainfall_measures_data</span> <span class="o">=</span> <span class="n">get_data_measures</span><span class="p">(</span><span class="n">parameter</span><span class="o">=</span><span class="s1">&#39;rainfall&#39;</span><span class="p">)</span>
-
 <span class="n">rainfall_readings_data_latest</span> <span class="o">=</span> <span class="n">get_data_readings</span><span class="p">(</span><span class="n">latest</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="nb">sorted</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">10000</span><span class="p">)</span>
 </pre></div>
 
@@ -14295,9 +14285,9 @@ a.anchor-link {
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Checking the number of entries for each dataset</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">rainfall_stations_data</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span>
-      <span class="n">rainfall_measures_data</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span>
-      <span class="n">rainfall_readings_data_latest</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Shape of station data: &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">rainfall_stations_data</span><span class="o">.</span><span class="n">shape</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Shape of measures data: &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">rainfall_measures_data</span><span class="o">.</span><span class="n">shape</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Shape of latest readings data: &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">rainfall_readings_data_latest</span><span class="o">.</span><span class="n">shape</span><span class="p">))</span>
 </pre></div>
 
      </div>
@@ -14317,7 +14307,70 @@ a.anchor-link {
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>(997, 19) (1023, 13) (919, 4)
+<pre>Shape of station data: (997, 19)
+Shape of measures data: (1023, 13)
+Shape of latest readings data: (919, 4)
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[7]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># checking for duplicates in each data frame by &#39;station_id&#39; or &#39;stationReference&#39; and dropping them</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Number of duplicates in the rainfall stations data: &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">rainfall_stations_data</span><span class="p">[</span><span class="n">rainfall_stations_data</span><span class="o">.</span><span class="n">duplicated</span><span class="p">([</span><span class="s1">&#39;stationReference&#39;</span><span class="p">])]</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Number of duplicates in the rainfall measures data: &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">rainfall_measures_data</span><span class="p">[</span><span class="n">rainfall_measures_data</span><span class="o">.</span><span class="n">duplicated</span><span class="p">([</span><span class="s1">&#39;stationReference&#39;</span><span class="p">])]</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Number of duplicates in the rainfall readings data: &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">rainfall_readings_data_latest</span><span class="p">[</span><span class="n">rainfall_readings_data_latest</span><span class="o">.</span><span class="n">duplicated</span><span class="p">([</span><span class="s1">&#39;@id&#39;</span><span class="p">])]</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+
+<span class="c1"># dropping the duplicates and retaining the first values - this can be investigated later and rows with more entries can be</span>
+<span class="c1"># kept to retain the most amount of information</span>
+<span class="n">rainfall_stations_data</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;stationReference&#39;</span><span class="p">],</span> <span class="n">keep</span><span class="o">=</span><span class="s1">&#39;first&#39;</span><span class="p">,</span> <span class="n">inplace</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+<span class="n">rainfall_measures_data</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;stationReference&#39;</span><span class="p">],</span> <span class="n">keep</span><span class="o">=</span><span class="s1">&#39;first&#39;</span><span class="p">,</span> <span class="n">inplace</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+<span class="n">rainfall_readings_data_latest</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;@id&#39;</span><span class="p">],</span> <span class="n">keep</span><span class="o">=</span><span class="s1">&#39;first&#39;</span><span class="p">,</span> <span class="n">inplace</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># resetting the indices of the data frames</span>
+<span class="n">rainfall_stations_data</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">inplace</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+<span class="n">rainfall_measures_data</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">inplace</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+<span class="n">rainfall_readings_data_latest</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">inplace</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Checking the number of entries for each dataset after dropping duplicates</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Shape of datasets after dropping duplicates:&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Shape of station data: &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">rainfall_stations_data</span><span class="o">.</span><span class="n">shape</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Shape of measures data: &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">rainfall_measures_data</span><span class="o">.</span><span class="n">shape</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Shape of latest readings data: &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">rainfall_readings_data_latest</span><span class="o">.</span><span class="n">shape</span><span class="p">))</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>Number of duplicates in the rainfall stations data: 2
+Number of duplicates in the rainfall measures data: 25
+Number of duplicates in the rainfall readings data: 0
+Shape of datasets after dropping duplicates:
+Shape of station data: (995, 19)
+Shape of measures data: (998, 13)
+Shape of latest readings data: (919, 4)
 </pre>
 </div>
 </div>
@@ -14334,7 +14387,7 @@ a.anchor-link {
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[7]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[8]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># preparing the datasets to be combined</span>
@@ -14358,7 +14411,7 @@ a.anchor-link {
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[8]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[9]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># merging the 3 dataframes for rainfall stations, measures, and readings data</span>
@@ -14388,7 +14441,7 @@ a.anchor-link {
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>(1001, 35)
+<pre>(1000, 35)
 </pre>
 </div>
 </div>
@@ -14400,7 +14453,7 @@ a.anchor-link {
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[9]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[10]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># further data cleaning</span>
@@ -14483,8 +14536,8 @@ a.anchor-link {
                                                     <span class="s1">&#39;reading_period&#39;</span>
                                                <span class="p">]]</span>
 
-<span class="c1"># viewing the shape of the resulting df</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">rainfall_combined_data_latest</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="c1"># viewing the shape of the resulting combined df</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Shape of the combined dataframe:&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">rainfall_combined_data_latest</span><span class="o">.</span><span class="n">shape</span><span class="p">))</span>
 </pre></div>
 
      </div>
@@ -14504,7 +14557,7 @@ a.anchor-link {
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>(1001, 17)
+<pre>Shape of the combined dataframe:(1000, 17)
 </pre>
 </div>
 </div>
@@ -14543,12 +14596,12 @@ a.anchor-link {
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Data-quality-checks">Data quality checks<a class="anchor-link" href="#Data-quality-checks">&#182;</a></h1>
+<h2 id="Data-quality-checks">Data quality checks<a class="anchor-link" href="#Data-quality-checks">&#182;</a></h2>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[10]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[11]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># check if there are any stations without recent rainfall measurements and list their Station IDs</span>
@@ -14583,7 +14636,7 @@ a.anchor-link {
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Total stations with no recent rainfall measurements: 82
+<pre>Total stations with no recent rainfall measurements: 81
 
 IDs of the respective stations:
 
@@ -14593,11 +14646,10 @@ IDs of the respective stations:
  &#39;E23657&#39; &#39;50108&#39; &#39;E7120&#39; &#39;E22735&#39; &#39;238097TP&#39; &#39;593321&#39; &#39;E2450&#39; &#39;562992&#39;
  &#39;E1691&#39; &#39;45157&#39; &#39;007533&#39; &#39;584098&#39; &#39;E14880&#39; &#39;E7190&#39; &#39;46101&#39; &#39;E2859&#39;
  &#39;476898_TG_333&#39; &#39;246847TP&#39; &#39;E24775&#39; &#39;568363&#39; &#39;E1928&#39; &#39;585022&#39; &#39;E24585&#39;
- &#39;605382&#39; &#39;563599&#39; &#39;55000A&#39; &#39;E24141&#39; &#39;562811&#39; &#39;E24499&#39; &#39;E5720&#39; &#39;E7190&#39;
- &#39;45108_&#39; &#39;E1711&#39; &#39;4527&#39; &#39;6666LO&#39; &#39;1409Lucas&#39; &#39;4549&#39; &#39;4548&#39; &#39;E5650&#39; &#39;7015&#39;
- &#39;1607&#39; &#39;47176&#39; &#39;1338&#39; &#39;1750&#39; &#39;1810&#39; &#39;1408&#39; &#39;Coldw1&#39; &#39;Mitch1&#39; &#39;Edgeh1&#39;
- &#39;Dubbs1&#39; &#39;585122_&#39; &#39;2102SO&#39;
- &#39;575092______________________________________&#39;
+ &#39;605382&#39; &#39;563599&#39; &#39;55000A&#39; &#39;E24141&#39; &#39;562811&#39; &#39;E24499&#39; &#39;E5720&#39; &#39;45108_&#39;
+ &#39;E1711&#39; &#39;4527&#39; &#39;6666LO&#39; &#39;1409Lucas&#39; &#39;4549&#39; &#39;4548&#39; &#39;E5650&#39; &#39;7015&#39; &#39;1607&#39;
+ &#39;47176&#39; &#39;1338&#39; &#39;1750&#39; &#39;1810&#39; &#39;1408&#39; &#39;Coldw1&#39; &#39;Mitch1&#39; &#39;Edgeh1&#39; &#39;Dubbs1&#39;
+ &#39;585122_&#39; &#39;2102SO&#39; &#39;575092______________________________________&#39;
  &#39;574786______________________________________&#39; &#39;062916&#39; &#39;E60880&#39; &#39;NE063&#39;]
 </pre>
 </div>
@@ -14610,7 +14662,7 @@ IDs of the respective stations:
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[11]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[12]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># NaN value check with an assert statement</span>
@@ -14625,7 +14677,7 @@ IDs of the respective stations:
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[12]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[13]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># listing stations without latitude (can also be checked for longitude)</span>
@@ -14658,52 +14710,14 @@ IDs of the respective stations:
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Total stations without latitude coordinates: 10
+<pre>Total stations without latitude coordinates: 11
 
 IDs of the respective stations:
 
-[&#39;024121&#39; &#39;282947TP&#39; &#39;068416&#39; &#39;Not_Specified&#39; &#39;E7040&#39; &#39;E23500&#39; &#39;305111&#39;
- &#39;6666LO&#39; &#39;4549&#39; &#39;4548&#39;]
+[&#39;024121&#39; &#39;282947TP&#39; &#39;E7040&#39; nan &#39;068416&#39; nan &#39;E23500&#39; &#39;305111&#39; &#39;6666LO&#39;
+ &#39;4549&#39; &#39;4548&#39;]
 </pre>
 </div>
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[13]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># check for duplicate stations by station ID</span>
-<span class="n">rainfall_combined_data_latest</span><span class="p">[</span><span class="s1">&#39;station_id&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">is_unique</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[13]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>False</pre>
-</div>
-
 </div>
 
 </div>
@@ -14716,7 +14730,18 @@ IDs of the respective stations:
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[14]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">rainfall_combined_data_latest</span><span class="p">[</span><span class="n">rainfall_combined_data_latest</span><span class="o">.</span><span class="n">duplicated</span><span class="p">([</span><span class="s1">&#39;station_id&#39;</span><span class="p">])]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># check for duplicate stations by station ID on combined data frame (they could have come from the responses df)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Number of duplicates in the combined data frame: &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">rainfall_combined_data_latest</span><span class="p">[</span><span class="n">rainfall_combined_data_latest</span><span class="o">.</span><span class="n">duplicated</span><span class="p">([</span><span class="s1">&#39;station_id&#39;</span><span class="p">])]</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+
+<span class="c1"># dropping the duplicates and retaining the first values - this can be investigated later and rows with more entries can be</span>
+<span class="c1"># kept to retain the most amount of information</span>
+<span class="n">rainfall_combined_data_latest</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;station_id&#39;</span><span class="p">],</span> <span class="n">keep</span><span class="o">=</span><span class="s1">&#39;first&#39;</span><span class="p">,</span> <span class="n">inplace</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># resetting the indices of the data frames</span>
+<span class="n">rainfall_combined_data_latest</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">inplace</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Checking the number of entries for the dataset after dropping duplicates</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Shape of combined data after dropping duplicates: &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">rainfall_combined_data_latest</span><span class="o">.</span><span class="n">shape</span><span class="p">))</span>
 </pre></div>
 
      </div>
@@ -14732,166 +14757,29 @@ IDs of the respective stations:
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[14]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
-
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>date</th>
-      <th>time</th>
-      <th>station_id</th>
-      <th>station_type</th>
-      <th>station_grid_reference</th>
-      <th>station_latitude</th>
-      <th>station_longitude</th>
-      <th>station_easting</th>
-      <th>station_northing</th>
-      <th>parameter_id</th>
-      <th>parameter_name</th>
-      <th>reading_qualifier</th>
-      <th>reading_value</th>
-      <th>reading_unit_id</th>
-      <th>reading_unit_name</th>
-      <th>reading_value_type</th>
-      <th>reading_period</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>758</th>
-      <td>2023-05-21</td>
-      <td>08:45:00</td>
-      <td>Not_Specified</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>rainfall</td>
-      <td>Rainfall</td>
-      <td>2</td>
-      <td>0.0</td>
-      <td>http://qudt.org/1.1/vocab/unit#Millimeter</td>
-      <td>mm</td>
-      <td>total</td>
-      <td>900.0</td>
-    </tr>
-    <tr>
-      <th>911</th>
-      <td>2023-05-15</td>
-      <td>07:09:48</td>
-      <td>305111</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>rainfall</td>
-      <td>Rainfall</td>
-      <td>Tipping Bucket Raingauge</td>
-      <td>0.2</td>
-      <td>http://qudt.org/1.1/vocab/unit#Millimeter</td>
-      <td>mm</td>
-      <td>event</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>957</th>
-      <td>NaT</td>
-      <td>NaT</td>
-      <td>E7190</td>
-      <td>Rainfall station</td>
-      <td>TQ564036</td>
-      <td>50.811276</td>
-      <td>0.219288</td>
-      <td>556450.0</td>
-      <td>103650.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>974</th>
-      <td>NaT</td>
-      <td>NaT</td>
-      <td>E7190</td>
-      <td>Rainfall station</td>
-      <td>TQ564036</td>
-      <td>50.811276</td>
-      <td>0.219288</td>
-      <td>556450.0</td>
-      <td>103650.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-  </tbody>
-</table>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>Number of duplicates in the combined data frame: 2
+Shape of combined data after dropping duplicates: (998, 17)
+</pre>
 </div>
 </div>
 
 </div>
 
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[15]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># checking if the coordinates of all rainfall stations are in the UK</span>
-
-<span class="c1">#lat = 61.5 and 49</span>
-<span class="c1">#long = -11 to 3</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
 </div>
 
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Saving-processed-data">Saving processed data<a class="anchor-link" href="#Saving-processed-data">&#182;</a></h1>
+<h2 id="Saving-processed-data">Saving processed data<a class="anchor-link" href="#Saving-processed-data">&#182;</a></h2>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[16]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[15]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># saving combined dataset as csv and excel files</span>

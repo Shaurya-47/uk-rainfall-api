@@ -2,16 +2,12 @@
 Repository containing a data pipeline that extracts, saves, and displays the latest UK rainfall data (latest readings and aggregated daily readings) from the Environment Agency (EA) API 
 (https://environment.data.gov.uk/flood-monitoring/doc/rainfall)
 
-## TODOs (REMOVE THIS)
+## TODOs (REMOVE THIS ONCE DONE):
 
-(1) Check Readme
-(2) Add a picture of the map on Readme
-(1) Clean code for data retrieval functions, especially for readings
-(2) Add data quality checks in the required places
-(10) duplicate data quality check by IDs from original data frames (list duplicates as well) - DO THIS FOR BOTH DATASETS AND THEN SAVE THEM!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-(6) review whole thing once done
-(7) Once everything is done for latest data, review date, time and duplicates for aggregated data. Excel file too. The times are wrong there clearly!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-(8) bach script: "--no-input \" as a command in jupyter nbconvert if you want notebook outputs without code
+* Review whole thing
+* Check Readme
+* Add screenshot to Readme
+* More data quality checks if time left
 
 ENABLE THE COOKIE LINE IF API CALLS FAIL
 

@@ -6,6 +6,7 @@
 # conda activate uk_rainfall_env
 # cd ./Documents/GitHub/uk-rainfall-api
 # sh execute_notebooks_daily_aggregated.sh
+# add "--no-input \" in the lines below to prevent code output
 
 jupyter nbconvert \
     --execute \
