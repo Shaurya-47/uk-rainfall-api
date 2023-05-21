@@ -1,15 +1,14 @@
 # uk-rainfall-api
-Repository containing a data pipeline that extracts and displays the latest UK rainfall data (latest readings and aggregated daily readings) from the Environment Agency (EA) API 
+Repository containing a data pipeline that extracts, saves, and displays the latest UK rainfall data (latest readings and aggregated daily readings) from the Environment Agency (EA) API 
 (https://environment.data.gov.uk/flood-monitoring/doc/rainfall)
 
 ## TODOs (REMOVE THIS)
 
-(1) Make Readme first
-(2) Add a picture of the 
+(1) Check Readme
+(2) Add a picture of the map on Readme
 (1) Clean code for data retrieval functions, especially for readings
 (2) Add data quality checks in the required places
 (10) duplicate data quality check by IDs from original data frames (list duplicates as well) - DO THIS FOR BOTH DATASETS AND THEN SAVE THEM!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-(5) map - add a short snippet to only plot stations with rainfall readings - can also put this in what to do if more time section
 (6) review whole thing once done
 (7) Once everything is done for latest data, review date, time and duplicates for aggregated data. Excel file too. The times are wrong there clearly!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 (8) bach script: "--no-input \" as a command in jupyter nbconvert if you want notebook outputs without code
@@ -48,7 +47,6 @@ the UK EA measurement stations respectively
 ### Project structure
 
 ```
-.
 ├── data
 │   └── rainfall_data_latest_{date}.csv
 │   └── rainfall_data_latest_{date}.xlsx
@@ -77,6 +75,9 @@ the UK EA measurement stations respectively
 
 ## To-do
 * add all the things here that you could do but can't due to lack of time - OFFICIAL
+* add a short snippet to only plot stations with rainfall readings - can also put this in what to do if more time section
+* more data quality checks
+* Investigate duplicates in more detail - can preserve more information by retaining entries with more values in columns. Right now I've just retained the first entries
 
 ## License
 
