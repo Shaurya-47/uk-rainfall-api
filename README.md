@@ -41,7 +41,7 @@ the UK EA measurement stations respectively
 5. Alternatively, you can run the jupyter notebooks via the Jupyter interface and obtain the same results
 
 ---
-### Project structure
+## Project structure
 
 ```
 ├── data
