@@ -17,17 +17,17 @@ Repository containing a data pipeline that extracts, saves, and displays the lat
 
 ## Setup
 1. **Clone this repository**
-    * Open the CLI(= Command-Line Interface, Mac: Terminal, Windows: Command Prompt)/Git Bash
+    * Open the CLI (Command Line Interface; Mac: Terminal, Windows: Command Prompt) or Git Bash
     * Navigate to your desired location using `cd <path>`
     * Type `git clone https://github.com/Shaurya-47/uk-rainfall-api.git`
 
 2. **Install the conda package mananger**
    * To install the required packages from the environment file `uk_rainfall_env.yml`, you need to have the conda package manager installed:
-        * [windows](https://conda.io/projects/conda/en/latest/user-guide/install/windows.html)
-        * [macOS](https://conda.io/projects/conda/en/latest/user-guide/install/macos.html)
-        * [linux](https://conda.io/projects/conda/en/latest/user-guide/install/linux.html)
+        * [Windows](https://conda.io/projects/conda/en/latest/user-guide/install/windows.html)
+        * [MacOS](https://conda.io/projects/conda/en/latest/user-guide/install/macos.html)
+        * [Linux](https://conda.io/projects/conda/en/latest/user-guide/install/linux.html)
 
-3. **Install the project environment `uk_rainfall_env` from the `uk_rainfall_env.yml` file**
+3. **Install the project environment** `uk_rainfall_env` **from the** `uk_rainfall_env.yml` **file**
    * type `conda env create -f uk_rainfall_env.yml` in your CLI
 
 ## Usage
@@ -39,8 +39,7 @@ Repository containing a data pipeline that extracts, saves, and displays the lat
 the UK EA measurement stations respectively
 5. Alternatively, you can run the jupyter notebooks via the Jupyter interface and obtain the same results
 
----
-## Project structure
+## Repository structure
 
 ```
 ├── data
@@ -48,11 +47,11 @@ the UK EA measurement stations respectively
 │   └── rainfall_data_latest_{date}.xlsx
 │   └── rainfall_data_daily_aggregated_{date}.csv
 │   └── rainfall_data_daily_aggregated_{date}.xlsx
-├── notebooks
+├── notebooks 
 │   └── data_retrieval_processing_latest.ipynb
 │   └── generate_map_latest.ipynb
 │   └── data_retrieval_processing_daily_aggregated.ipynb
-│   └── generate_map_aggregated.ipynb
+│   └── generate_map_daily_aggregated.ipynb
 ├── reports
 │   └── maps
 │	└── rainfall_map_latest_{date}.html
@@ -67,6 +66,15 @@ the UK EA measurement stations respectively
 ├── execute_notebooks_latest.sh
 ├── execute_notebooks_daily_aggregated.sh
 ```
+
+---
+
+* `data`: contains the cleaned datasets
+* `notebooks`: contains the Jupyter notebooks that process, clean, and save the data, and generate the maps
+* `reports`: contains the outputs
+	* `maps`: contains the generated maps
+	* `notebook_outputs`: contains the Jupyter notebook outputs as html files - for code understanding
+
 ---
 
 ## To-do
