@@ -2,13 +2,17 @@
 Repository containing a data pipeline that extracts, saves, and displays the latest UK rainfall data (latest readings and aggregated daily readings) from the Environment Agency (EA) API 
 (https://environment.data.gov.uk/flood-monitoring/doc/rainfall)
 
+## Work-in-progress
+
 ## TODOs (REMOVE THIS ONCE DONE):
 
+* Understand query code better and comment better (requests, get, json)
 * Review whole thing
 * Check Readme
 * Add screenshot to Readme
 * More data quality checks if time left
 * I have 2 less stations as 'not_specified' duplicates got dropped and another spurious one
+* Check if it works on another computer
 
 ENABLE THE COOKIE LINE IF API CALLS FAIL
 
