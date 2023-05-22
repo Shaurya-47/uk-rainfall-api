@@ -7,9 +7,8 @@ Repository containing a data pipeline that extracts, saves, and displays the lat
 
 ## TODOs (REMOVE THIS ONCE DONE):
 
-* Check Readme instructions
-* Review Readme
-* Check if it works on another computer
+* Check if it works on another computer - based on Readme instructions
+* Mention in email - see todo section for what more can be done
 
 ## Requirements
 * Python 3 and Anaconda
@@ -67,8 +66,6 @@ the UK EA measurement stations respectively
 ├── execute_notebooks_daily_aggregated.sh
 ```
 
----
-
 * `data`: contains the cleaned datasets
 * `notebooks`: contains the Jupyter notebooks that process, clean, and save the data, and generate the maps
 * `reports`: contains the outputs
@@ -78,10 +75,12 @@ the UK EA measurement stations respectively
 ---
 
 ## To-do
-* add all the things here that you could do but can't due to lack of time - OFFICIAL
-* add a short snippet to only plot stations with rainfall readings - can also put this in what to do if more time section
-* more data quality checks
-* Investigate duplicates in more detail - can preserve more information by retaining entries with more values in columns. Right now I've just retained the first entries
+* Add a filter to the map to plot only stations with non-zero rainfall readings. This would show the regions with recent rainfall and declutter the map
+* Add more data quality checks along data types
+* Investigate duplicates in more detail: more information per entry can by retained by preserving entries with more values in the columns. Currently the first entries are retained
+* Fetch more data and display historical rainfall readings per station on a time-series chart
+* Mark non-responsive stations in red on the map
+* Add search functionality to look for measurement stations by ID
 
 ## License
 
