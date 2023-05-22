@@ -1,5 +1,5 @@
 # uk-rainfall-api
-Repository containing a data pipeline that extracts, saves, and displays the latest UK rainfall data for all measurement stations on a map (latest readings and aggregated daily readings). The data is fetched from the Environment Agency (EA) API 
+Repository containing a data pipeline that extracts, saves, and displays UK rainfall data for all measurement stations on a map (latest readings and aggregated daily readings). Data is fetched from the Environment Agency (EA) API 
 (https://environment.data.gov.uk/flood-monitoring/doc/rainfall).
 
 ## Screenshot of a map generated from the latest data:
