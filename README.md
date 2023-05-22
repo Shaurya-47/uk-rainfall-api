@@ -25,7 +25,7 @@ Repository containing a data pipeline that extracts, saves, and displays the lat
         * [MacOS](https://conda.io/projects/conda/en/latest/user-guide/install/macos.html)
         * [Linux](https://conda.io/projects/conda/en/latest/user-guide/install/linux.html)
 
-4. **Install the project environment** `uk_rainfall_env` **from the** `uk_rainfall_env.yml` **file**
+4. **Install the project environment from the environment file**
         * Open Git Bash or Anaconda Prompt (can also be done via the CLI if conda is added to the PATH environment during installation)
 	* Navigate to the directory where `uk-rainfall-api` is installed via `cd <path>`
 	* Type `conda env create -f uk_rainfall_env.yml`
