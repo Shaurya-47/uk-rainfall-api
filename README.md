@@ -1,6 +1,6 @@
 # uk-rainfall-api
 Repository containing a data pipeline that extracts, saves, and displays UK rainfall data for all measurement stations on a map (latest readings and aggregated daily readings). Data is fetched from the Environment Agency (EA) API 
-(https://environment.data.gov.uk/flood-monitoring/doc/rainfall).
+(https://environment.data.gov.uk/flood-monitoring/doc/rainfall). Rainfall is measured via Tipping Bucket Raingauges (TBRs).
 
 ## Screenshot of a map generated from the latest data:
 ![alt text](https://github.com/Shaurya-47/uk-rainfall-api/blob/main/map_screenshot.PNG?raw=true)
