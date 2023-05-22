@@ -2,21 +2,18 @@
 Repository containing a data pipeline that extracts, saves, and displays the latest UK rainfall data for all measurement stations on a map (latest readings and aggregated daily readings). The data is fetched from the Environment Agency (EA) API 
 (https://environment.data.gov.uk/flood-monitoring/doc/rainfall).
 
-## Screenshot of the map generated from the latest data:
+## Screenshot of a map generated from the latest data:
 ![alt text](https://github.com/Shaurya-47/uk-rainfall-api/blob/main/map_screenshot.PNG?raw=true)
 
 ## TODOs (REMOVE THIS ONCE DONE):
 
-* Review whole thing
-* Check Readme instructions properly
-* Add screenshot to Readme
+* Check Readme instructions
+* Review Readme
 * Check if it works on another computer
-
-ENABLE THE COOKIE LINE IF API CALLS FAIL
 
 ## Requirements
 * Python 3 and Anaconda
-* Libraries: numpy, pandas, folium, and MarkerCluster from folium.plugins
+* Libraries: `numpy`, `pandas`, `folium`, and `MarkerCluster()` from `folium.plugins`
 
 ## Setup
 1. **Clone this repository**
