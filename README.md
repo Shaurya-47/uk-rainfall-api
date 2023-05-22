@@ -38,7 +38,8 @@ Repository containing a data pipeline that extracts, saves, and displays the lat
 3. Navigate to the root project directory where the bash scripts are stored using `cd <path>` (e.g., `cd ./Documents/GitHub/uk-rainfall-api`)
 4. Run the Bash script `sh execute_notebooks_latest.sh` or `sh execute_notebooks_daily_aggregated.sh` to save and visualize the latest or aggregated daily rainfall measurements across 
 the UK EA measurement stations respectively
-5. Alternatively, you can run the jupyter notebooks via the Jupyter interface and obtain the same results
+5. Alternatively, you can run the jupyter notebooks via the Jupyter interface and obtain the same results. Files with the suffix `latest` use only the latest measurements and files with the suffix `daily_aggregated`
+ use daily data that is aggregated per station
 
 ## Repository structure
 
