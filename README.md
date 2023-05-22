@@ -6,12 +6,9 @@ Repository containing a data pipeline that extracts, saves, and displays the lat
 
 ## TODOs (REMOVE THIS ONCE DONE):
 
-* Understand query code better and comment better (requests, get, json)
 * Review whole thing
 * Check Readme
 * Add screenshot to Readme
-* More data quality checks if time left
-* I have 2 less stations as 'not_specified' duplicates got dropped and another spurious one
 * Check if it works on another computer
 
 ENABLE THE COOKIE LINE IF API CALLS FAIL
@@ -40,7 +37,7 @@ ENABLE THE COOKIE LINE IF API CALLS FAIL
 1. Open the CLI or Git Bash and type `source ~/anaconda3/etc/profile.d/conda.sh`
 2. Activate the Python environment you just installed via `conda activate uk_rainfall_env`
 3. Navigate to the root project directory where the bash scripts are stored using `cd <path>` (e.g., `cd ./Documents/GitHub/uk-rainfall-api`)
-4. Run the Bash scripts `execute_notebooks_latest.sh` or `execute_notebooks_daily_aggregated.sh` to save and visualize the latest or aggregated daily rainfall measurements across 
+4. Run the Bash script `sh execute_notebooks_latest.sh` or `sh execute_notebooks_daily_aggregated.sh` to save and visualize the latest or aggregated daily rainfall measurements across 
 the UK EA measurement stations respectively
 5. Alternatively, you can run the jupyter notebooks via the Jupyter interface and obtain the same results
 
