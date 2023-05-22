@@ -5,33 +5,35 @@ Repository containing a data pipeline that extracts, saves, and displays the lat
 ## Screenshot of a map generated from the latest data:
 ![alt text](https://github.com/Shaurya-47/uk-rainfall-api/blob/main/map_screenshot.PNG?raw=true)
 
-## TODOs (REMOVE THIS ONCE DONE):
-
-* Check if it works on another computer - based on Readme instructions
-* Mention in email - see todo section for what more can be done
-
 ## Requirements
-* Python 3 and Anaconda
-* Libraries: `numpy`, `pandas`, `folium`, and `MarkerCluster()` from `folium.plugins`
+* Python 3, Anaconda, Git (or GitHub Desktop)
+* Python libraries: `numpy`, `pandas`, `folium`, and `MarkerCluster()` from `folium.plugins`
 
 ## Setup
-1. **Clone this repository**
+1. **Install Git**
+	* Install Git via https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
+	* Alternatively, you can also use GitHub Desktop; install via https://desktop.github.com/
+
+2. **Clone this repository**
     * Open the CLI (Command Line Interface; Mac: Terminal, Windows: Command Prompt) or Git Bash
     * Navigate to your desired location using `cd <path>`
     * Type `git clone https://github.com/Shaurya-47/uk-rainfall-api.git`
 
-2. **Install the conda package mananger**
+3. **Install the conda package mananger**
    * To install the required packages from the environment file `uk_rainfall_env.yml`, you need to have the conda package manager installed:
         * [Windows](https://conda.io/projects/conda/en/latest/user-guide/install/windows.html)
         * [MacOS](https://conda.io/projects/conda/en/latest/user-guide/install/macos.html)
         * [Linux](https://conda.io/projects/conda/en/latest/user-guide/install/linux.html)
 
-3. **Install the project environment** `uk_rainfall_env` **from the** `uk_rainfall_env.yml` **file**
-   * type `conda env create -f uk_rainfall_env.yml` in your CLI
+4. **Install the project environment** `uk_rainfall_env` **from the** `uk_rainfall_env.yml` **file**
+        * Open Git Bash or Anaconda Prompt (can also be done via the CLI if conda is added to the PATH environment during installation)
+	* Navigate to the directory where `uk-rainfall-api` is installed via `cd <path>`
+	* Type `conda env create -f uk_rainfall_env.yml`
+	* This can take several minutes; alternatively install the required packages manually and then run the code
 
 ## Usage
 
-1. Open the CLI or Git Bash and type `source ~/anaconda3/etc/profile.d/conda.sh`
+1. Open Git Bash and type `source ~/anaconda3/etc/profile.d/conda.sh` (can also be done via the CLI)
 2. Activate the Python environment you just installed via `conda activate uk_rainfall_env`
 3. Navigate to the root project directory where the bash scripts are stored using `cd <path>` (e.g., `cd ./Documents/GitHub/uk-rainfall-api`)
 4. Run the Bash script `sh execute_notebooks_latest.sh` or `sh execute_notebooks_daily_aggregated.sh` to save and visualize the latest or aggregated daily rainfall measurements across 
